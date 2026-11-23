@@ -82,6 +82,7 @@
             <a href="#info-acara">Acara</a>
             <a href="#lokasi">Lokasi</a>
             <a href="#galeri">Galeri</a>
+            <a href="#amplop">Amplop</a>
             <a href="#konfirmasi">RSVP</a>
           </nav>
         </header>
@@ -144,6 +145,17 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </section>
+        <a
+          class="map-directions"
+          href="https://www.google.com/maps/dir/?api=1&amp;destination=SMKN%206%20Kota%20Tangerang%20Selatan"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M7 17 17 7M7 7h10v10" />
+          </svg>
+          Petunjuk arah
+        </a>
 
         <section class="event__agenda" aria-labelledby="agenda-title">
           <h3 id="agenda-title">Susunan Acara</h3>
@@ -228,6 +240,25 @@
           Simpan ke Google Calendar
         </a>
 
+        <section id="amplop" class="digital-envelope" aria-labelledby="digital-envelope-title">
+          <p class="digital-envelope__label">Amplop Digital</p>
+          <h3 id="digital-envelope-title" class="digital-envelope__title">Nomor Rekening</h3>
+          <p class="digital-envelope__description">Jika berkenan, tanda kasih dapat disampaikan melalui nomor berikut.</p>
+          <div class="digital-envelope__account">
+            <div>
+              <span class="digital-envelope__account-label">Nomor rekening</span>
+              <strong id="account-number" class="digital-envelope__number">+62 85159884344</strong>
+            </div>
+            <button id="copy-account-button" class="copy-account-button" type="button" aria-label="Salin nomor rekening">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <rect x="8" y="8" width="12" height="12" rx="2" />
+                <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" />
+              </svg>
+              Salin
+            </button>
+          </div>
+        </section>
+
         <section id="konfirmasi" class="rsvp" aria-labelledby="rsvp-title">
           <header class="rsvp__header">
             <p class="event__eyebrow">Mohon Konfirmasi</p>
@@ -271,6 +302,7 @@
       </div>
     </section>
   </main>
+  <div id="copy-toast" class="copy-toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
   <audio id="background-audio" src="lagu/toby%20fox%20-%20UNDERTALE%20Soundtrack%20-%2071%20Undertale.mp3" loop preload="none" aria-hidden="true"></audio>
   <script src="java.js" defer></script>
 </body>

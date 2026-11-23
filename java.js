@@ -422,3 +422,60 @@ if (updateCountdown()) {
     }
   }, 1000);
 }
+
+const accountNumber = getRequiredElement("account-number");
+const copyAccountButton = getRequiredElement("copy-account-button");
+const copyToast = getRequiredElement("copy-toast");
+let copyToastTimer;
+let copyToastHideTimer;
+
+const showCopyToast = (message, isError = false) => {
+  window.clearTimeout(copyToastTimer);
+  window.clearTimeout(copyToastHideTimer);
+  copyToast.textContent = message;
+  copyToast.classList.toggle("copy-toast--error", isError);
+  copyToast.hidden = false;
+  window.requestAnimationFrame(() => copyToast.classList.add("copy-toast--visible"));
+
+  copyToastTimer = window.setTimeout(() => {
+    copyToast.classList.remove("copy-toast--visible");
+    copyToastHideTimer = window.setTimeout(() => {
+      if (!copyToast.classList.contains("copy-toast--visible")) {
+        copyToast.hidden = true;
+      }
+    }, 200);
+  }, 2600);
+};
+
+const copyTextToClipboard = async (text) => {
+  if (window.isSecureContext && navigator.clipboard
+    && typeof navigator.clipboard.writeText === "function") {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const temporaryInput = document.createElement("textarea");
+  temporaryInput.value = text;
+  temporaryInput.setAttribute("readonly", "");
+  temporaryInput.style.position = "fixed";
+  temporaryInput.style.opacity = "0";
+  document.body.append(temporaryInput);
+  temporaryInput.select();
+  temporaryInput.setSelectionRange(0, text.length);
+  const copied = document.execCommand("copy");
+  temporaryInput.remove();
+
+  if (!copied) {
+    throw new Error("Browser tidak mengizinkan penyalinan nomor rekening.");
+  }
+};
+
+copyAccountButton.addEventListener("click", async () => {
+  try {
+    await copyTextToClipboard(accountNumber.textContent.trim());
+    showCopyToast("Nomor rekening berhasil disalin.");
+  } catch (error) {
+    console.error("Gagal menyalin nomor rekening.", error);
+    showCopyToast("Nomor rekening tidak dapat disalin. Silakan salin secara manual.", true);
+  }
+});

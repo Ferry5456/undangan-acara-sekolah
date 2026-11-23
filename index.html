@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#082f6b">
+  <title>Undangan Acara Sekolah</title>
+  <link rel="stylesheet" href="tes.css">
+</head>
+<body>
+  <main>
+    <section id="undangan" class="cover" aria-label="Sampul undangan">
+      <div class="cover__card">
+        <div class="cover__content">
+          <img
+            class="cover__logo"
+            src="gambar/logo-smkn6.jpg"
+            alt="Logo SMK Negeri 6 Kota Tangerang Selatan"
+            width="120"
+            height="120"
+            decoding="async"
+          >
+
+          <p class="cover__eyebrow">
+            SMKN 6 Kota Tangerang Selatan
+          </p>
+          <h1 class="cover__title">
+            Undangan
+            <span>Acara Sekolah</span>
+          </h1>
+          <div class="cover__divider" aria-hidden="true"></div>
+          <p class="cover__description">
+            Kami mengundang Bapak/Ibu untuk menyaksikan pentas seni, seminar pendidikan, dan pameran karya siswa.
+          </p>
+          <p class="cover__events">
+            Pentas Seni <span aria-hidden="true">•</span> Seminar Pendidikan <span aria-hidden="true">•</span> Pameran Karya Siswa
+          </p>
+        </div>
+
+        <button id="open-invitation" class="cover__button" type="button" aria-controls="detail-acara" aria-expanded="false">
+          Buka Undangan
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+          </svg>
+        </button>
+
+        <p class="cover__footer">
+          SAMPAI BERTEMU DI ACARA
+        </p>
+      </div>
+    </section>
+
+    <section id="detail-acara" class="event" aria-labelledby="event-title" hidden>
+      <div class="event__content">
+        <header class="site-header">
+          <a class="site-header__brand" href="#detail-acara">
+            <img class="site-header__logo" src="gambar/logo-smkn6.jpg" alt="" width="48" height="48" aria-hidden="true">
+            <span>
+              <strong>SMKN 6</strong>
+              <small>Kota Tangerang Selatan</small>
+            </span>
+          </a>
+          <div class="site-header__actions">
+            <div class="music-controls">
+              <select id="music-track-select" class="music-track-select" aria-label="Pilih lagu latar">
+                <option value="lagu/toby%20fox%20-%20UNDERTALE%20Soundtrack%20-%2071%20Undertale.flac">UNDERTALE - Toby Fox</option>
+                <option value="lagu/120.%20The%20Flowers%20There%E2%80%A6%20Are%20Always%20in%20Full%20Bloom%20%28feat.%20Eda%29.mp3">The Flowers There… Are Always in Full Bloom</option>
+                <option value="lagu/2-11.%20RE%20Aoharu.mp3">RE Aoharu</option>
+              </select>
+              <button id="music-toggle" class="music-toggle" type="button" aria-label="Putar musik latar" aria-pressed="false">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M9 18V5l12-2v13M9 10l12-2" />
+                  <circle cx="6" cy="18" r="3" />
+                  <circle cx="18" cy="16" r="3" />
+                </svg>
+                <span id="music-toggle-label">Putar Musik</span>
+              </button>
+            </div>
+            <p id="music-status" class="music-status" aria-live="polite">Musik diputar setelah undangan dibuka.</p>
+          </div>
+          <nav class="site-nav" aria-label="Navigasi undangan">
+            <a href="#info-acara">Acara</a>
+            <a href="#lokasi">Lokasi</a>
+            <a href="#galeri">Galeri</a>
+            <a href="#konfirmasi">RSVP</a>
+          </nav>
+        </header>
+
+        <header class="event__header" id="info-acara">
+          <p class="event__eyebrow">Undangan Resmi</p>
+          <h2 id="event-title" class="event__title" tabindex="-1">Pentas Seni, Seminar Pendidikan, dan Pameran Karya Siswa</h2>
+          <p id="event-description" class="event__description">
+            Bersama kita apresiasi penampilan dan karya siswa serta berbagi dalam seminar pendidikan.
+          </p>
+          <p class="event__notice">
+            Catatan: tanggal, waktu, dan susunan acara masih contoh. Silakan sesuaikan dengan informasi resmi.
+          </p>
+        </header>
+
+        <article class="event__letter">
+          <p class="event__salutation">
+            Kepada Yth.<br>
+            Bapak/Ibu Orang Tua/Wali Murid dan tamu undangan
+          </p>
+          <p>
+            Dengan hormat, kami mengundang Bapak/Ibu Orang Tua/Wali Murid untuk menghadiri acara sekolah yang diisi dengan pentas seni, seminar pendidikan, dan pameran karya siswa.
+          </p>
+          <p>
+            Kehadiran Bapak/Ibu akan menjadi dukungan berarti bagi para siswa. Kami berharap Bapak/Ibu dapat melihat hasil karya dan penampilan mereka secara langsung.
+          </p>
+          <p class="event__letter-note">Mohon hadir 15 menit sebelum acara dimulai.</p>
+          <p class="event__closing">Hormat kami,<strong>Panitia Acara Sekolah</strong></p>
+        </article>
+
+        <div class="event__details">
+          <article class="event__detail">
+            <span class="event__detail-icon" aria-hidden="true">📅</span>
+            <div>
+              <h3>Hari &amp; Tanggal</h3>
+              <time id="event-start" datetime="2026-12-20T08:00:00+07:00">Minggu, 20 Desember 2026</time>
+            </div>
+          </article>
+          <article class="event__detail">
+            <span class="event__detail-icon" aria-hidden="true">🕗</span>
+            <div>
+              <h3>Waktu</h3>
+              <p><time datetime="2026-12-20T08:00:00+07:00">08.00</time>–<time id="event-end" datetime="2026-12-20T14:00:00+07:00">14.00 WIB</time></p>
+            </div>
+          </article>
+          <article class="event__detail event__detail--location">
+            <span class="event__detail-icon" aria-hidden="true">📍</span>
+            <div>
+              <h3>Lokasi</h3>
+              <p id="event-location">SMKN 6 Kota Tangerang Selatan</p>
+            </div>
+          </article>
+        </div>
+
+        <section class="map-block" id="lokasi" aria-label="Peta lokasi acara">
+          <iframe
+            title="Lokasi SMKN 6 Kota Tangerang Selatan"
+            src="https://www.google.com/maps?q=SMKN%206%20Kota%20Tangerang%20Selatan&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
+
+        <section class="event__agenda" aria-labelledby="agenda-title">
+          <h3 id="agenda-title">Susunan Acara</h3>
+          <ol>
+            <li><time datetime="2026-12-20T08:00:00+07:00">08.00</time><span>Registrasi dan pembukaan</span></li>
+            <li><time datetime="2026-12-20T08:30:00+07:00">08.30</time><span>Pentas seni siswa</span></li>
+            <li><time datetime="2026-12-20T10:00:00+07:00">10.00</time><span>Seminar pendidikan</span></li>
+            <li><time datetime="2026-12-20T11:30:00+07:00">11.30</time><span>Pameran karya dan ramah tamah</span></li>
+            <li><time datetime="2026-12-20T14:00:00+07:00">14.00</time><span>Penutupan</span></li>
+          </ol>
+        </section>
+
+        <section id="galeri" class="gallery" aria-labelledby="gallery-title">
+          <header class="gallery__header" data-scroll-reveal>
+            <p class="event__eyebrow">Momen Berharga</p>
+            <h3 id="gallery-title" class="gallery__title">Galeri Kegiatan Sekolah</h3>
+            <p class="gallery__description">Beberapa kegiatan siswa di lingkungan sekolah.</p>
+          </header>
+          <div class="gallery__grid">
+            <figure class="gallery__item" data-scroll-reveal>
+              <img
+                src="gambar/WhatsApp%20Image%202026-11-23%20at%2009.20.09.jpeg"
+                alt="Para siswa berkumpul bersama dalam kegiatan sekolah"
+                loading="lazy"
+                decoding="async"
+                width="900"
+                height="700"
+              >
+              <figcaption>Momen kebersamaan siswa</figcaption>
+            </figure>
+            <figure class="gallery__item" data-scroll-reveal>
+              <img
+                src="gambar/WhatsApp%20Image%202026-11-23%20at%2009.18.24.jpeg"
+                alt="Siswa berdiskusi dan bekerja sama di kelas"
+                loading="lazy"
+                decoding="async"
+                width="900"
+                height="700"
+              >
+              <figcaption>Diskusi dan kerja sama</figcaption>
+            </figure>
+            <figure class="gallery__item" data-scroll-reveal>
+              <img
+                src="gambar/WhatsApp%20Image%202026-11-23%20at%2009.16.50.jpeg"
+                alt="Siswa belajar di laboratorium komputer"
+                loading="lazy"
+                decoding="async"
+                width="900"
+                height="700"
+              >
+              <figcaption>Belajar dan berkarya</figcaption>
+            </figure>
+            <figure class="gallery__item" data-scroll-reveal>
+              <img
+                src="gambar/WhatsApp%20Image%202026-11-23%20at%2009.15.32.jpeg"
+                alt="Suasana kegiatan belajar di ruang kelas"
+                loading="lazy"
+                decoding="async"
+                width="900"
+                height="700"
+              >
+              <figcaption>Kreativitas di dalam kelas</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="countdown" aria-labelledby="countdown-title">
+          <h3 id="countdown-title" class="countdown__title">Acara dimulai dalam</h3>
+          <div class="countdown__grid" role="timer" aria-live="off" aria-label="Hitung mundur menuju acara">
+            <div class="countdown__unit"><span id="countdown-days">--</span><small>Hari</small></div>
+            <div class="countdown__unit"><span id="countdown-hours">--</span><small>Jam</small></div>
+            <div class="countdown__unit"><span id="countdown-minutes">--</span><small>Menit</small></div>
+            <div class="countdown__unit"><span id="countdown-seconds">--</span><small>Detik</small></div>
+          </div>
+          <p id="countdown-status" class="countdown__status" aria-live="polite"></p>
+        </section>
+
+        <a id="calendar-link" class="event__calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2Z" />
+          </svg>
+          Simpan ke Google Calendar
+        </a>
+
+        <section id="konfirmasi" class="rsvp" aria-labelledby="rsvp-title">
+          <header class="rsvp__header">
+            <p class="event__eyebrow">Mohon Konfirmasi</p>
+            <h3 id="rsvp-title" class="rsvp__title">Konfirmasi Kehadiran</h3>
+            <p class="rsvp__description">Silakan isi konfirmasi kehadiran dan tuliskan ucapan.</p>
+          </header>
+
+          <form id="rsvp-form" class="rsvp__form">
+            <label class="rsvp__field" for="rsvp-name">
+              Nama
+              <input id="rsvp-name" name="name" type="text" autocomplete="name" maxlength="80" required>
+            </label>
+            <label class="rsvp__field" for="rsvp-attendance">
+              Konfirmasi kehadiran
+              <select id="rsvp-attendance" name="attendance" required>
+                <option value="hadir">Hadir</option>
+                <option value="tidak-hadir">Tidak dapat hadir</option>
+              </select>
+            </label>
+            <label class="rsvp__field" for="rsvp-guests">
+              <span id="rsvp-guests-label">Jumlah orang yang hadir</span>
+              <input id="rsvp-guests" name="guests" type="number" min="1" value="1" required>
+            </label>
+            <label class="rsvp__field rsvp__field--message" for="rsvp-message">
+              Ucapan
+              <textarea id="rsvp-message" name="message" rows="4" maxlength="500" required></textarea>
+            </label>
+            <button class="rsvp__submit" type="submit">Kirim Konfirmasi &amp; Ucapan</button>
+          </form>
+          <p id="rsvp-status" class="rsvp__status" role="status" aria-live="polite"></p>
+          <p class="rsvp__privacy">Konfirmasi dan ucapan tersimpan di browser perangkat ini.</p>
+
+          <section class="guestbook" aria-labelledby="guestbook-title">
+            <h4 id="guestbook-title" class="guestbook__title">Buku Tamu</h4>
+            <p id="guestbook-empty" class="guestbook__empty">Belum ada ucapan.</p>
+            <ol id="guestbook-list" class="guestbook__list" aria-label="Daftar ucapan tamu" aria-live="polite" hidden></ol>
+          </section>
+        </section>
+
+        <button id="close-invitation" class="event__back" type="button" aria-controls="detail-acara">Kembali ke sampul</button>
+      </div>
+    </section>
+  </main>
+  <audio id="background-audio" src="lagu/toby%20fox%20-%20UNDERTALE%20Soundtrack%20-%2071%20Undertale.flac" loop preload="none" aria-hidden="true"></audio>
+  <script src="java.js" defer></script>
+</body>
+</html>
